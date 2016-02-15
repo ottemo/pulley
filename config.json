@@ -1,6 +1,6 @@
 {
 	"interactive": false,
-	"remote": "upstream",
+	"remote": "origin",
 	"repos": {
 		"jeresig/pulley": false
 	}
