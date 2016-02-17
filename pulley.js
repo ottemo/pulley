@@ -12,7 +12,8 @@
 		fs = require("fs"),
 		prompt = require("prompt"),
 		request = require("request"),
-		colors = require("colors"),
+        colors = require("colors"),
+        os = require("os"),
 		pkg = require("./package"),
 
 		// Process references
@@ -68,14 +69,14 @@
 				},
 				body: {
 					scopes: ["repo"],
-					note: "Pulley",
+					note: "Pulley-"+ os.hostname(),
 					note_url: "https://github.com/jeresig/pulley"
 				}
 			}, function( err, res, body ) {
 				if ( err ) {
 					exit( err );
 				}
-				
+
 				token = body.token;
 				if ( token ) {
 					exec( "git config --global --add pulley.token " + token, function( error, stdout, stderr ) {
