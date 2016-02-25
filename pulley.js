@@ -221,7 +221,7 @@
 
 		callAPI( path, function( data ) {
 			var match,
-				msg = "Close GH-" + id + ": " + pull.title + ".",
+				msg = "Close " + user_repo + "#" + id + ": " + pull.title + ".",
 				author = JSON.parse( data )[ 0 ].commit.author.name,
 				base_branch = pull.base.ref,
 				issues = [],
